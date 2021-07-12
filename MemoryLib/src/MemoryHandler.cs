@@ -32,7 +32,7 @@ namespace MemoryLib
             int typeSize = Marshal.SizeOf(typeof(T));
             byte[] buffer = new byte[typeSize];
 
-            MemoryUtil.ReadProcessMemory(ProcHandle, address, buffer, 1, out bytesRead);
+            MemoryUtil.ReadProcessMemory(ProcHandle, address, buffer, typeSize, out bytesRead);
 
             GCHandle bufferHandle = GCHandle.Alloc(buffer, GCHandleType.Pinned);
             IntPtr bufferPtr = bufferHandle.AddrOfPinnedObject();
@@ -48,8 +48,8 @@ namespace MemoryLib
             IntPtr curPtr = IntPtr.Add(basePtr, baseOffset);
             foreach (var offset in offsets)
             {
-                curPtr = IntPtr.Add(curPtr, offset);
                 curPtr = ResolvePointer(curPtr);
+                curPtr = IntPtr.Add(curPtr, offset);
             }
             return curPtr;
         }
