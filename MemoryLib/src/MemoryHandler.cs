@@ -42,6 +42,20 @@ namespace MemoryLib
             return value;
         }
 
+        public void WriteMemory<T>(IntPtr address, T value)
+        {
+            IntPtr bytesWritten;
+            int typeSize = Marshal.SizeOf(typeof(T));
+            byte[] buffer = new byte[typeSize];
+
+            GCHandle bufferHandle = GCHandle.Alloc(buffer, GCHandleType.Pinned);
+            IntPtr bufferPtr = bufferHandle.AddrOfPinnedObject();
+            Marshal.StructureToPtr<T>(value, bufferPtr, false);
+            bufferHandle.Free();
+
+            MemoryUtil.WriteProcessMemory(ProcHandle, address, buffer, typeSize, out bytesWritten);
+        }
+
         public IntPtr GetAddressWithOffsets(int baseOffset, params int[] offsets)
         {
             IntPtr basePtr = GetBaseAddress();
