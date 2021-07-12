@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace cstool
+namespace StriveUtil
 {
     class Program
     {
