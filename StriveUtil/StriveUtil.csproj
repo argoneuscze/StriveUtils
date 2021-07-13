@@ -9,6 +9,7 @@
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
     <PublishReadyToRun>true</PublishReadyToRun>
+    <!-- <PublishReadyToRunShowWarnings>true</PublishReadyToRunShowWarnings> -->
     <SelfContained>false</SelfContained>
     <!-- <PublishTrimmed>true</PublishTrimmed> -->
   </PropertyGroup>
