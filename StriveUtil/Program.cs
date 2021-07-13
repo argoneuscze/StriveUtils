@@ -27,7 +27,7 @@ namespace StriveUtil
             {
                 wallP2 = strive.ReadMemory<int>(wallP2Ptr);
                 riscP2 = strive.ReadMemory<int>(riscP2Ptr);
-                newRisc = Math.Min((int)Math.Round(wallP2 * 4.26), 12800);
+                newRisc = Math.Min((int)Math.Round(wallP2 * ((double)12800 / 3000)), 12800);
                 strive.WriteMemory<int>(riscP2Ptr, newRisc);
             }
         }
