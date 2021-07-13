@@ -17,16 +17,14 @@ namespace StriveUtil
             IntPtr riscP2Ptr = strive.GetAddressWithOffsets(riscOnP2.Item1, riscOnP2.Item2);
 
             int wallP2;
-            int riscP2;
             int newRisc;
 
             Console.WriteLine("Process found and tool running.");
-            // Console.WriteLine("P2WALL: {0:X}, P2RISC: {1:X}", wallP2Ptr, riscP2Ptr);
+            Console.WriteLine("P2WALL: {0:X}, P2RISC: {1:X}", wallP2Ptr, riscP2Ptr);
 
             while (true)
             {
                 wallP2 = strive.ReadMemory<int>(wallP2Ptr);
-                riscP2 = strive.ReadMemory<int>(riscP2Ptr);
                 newRisc = Math.Min((int)Math.Round(wallP2 * ((double)12800 / 3000)), 12800);
                 strive.WriteMemory<int>(riscP2Ptr, newRisc);
             }
