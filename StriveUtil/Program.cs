@@ -31,9 +31,10 @@ namespace StriveUtil
 
             while (true)
             {
-                wallP1 = strive.ReadMemory<int>(wallP1Ptr);
-                newRisc = Math.Min((int)Math.Round(wallP1 * ((double)12800 / 3000)), 12800);
-                strive.WriteMemory<int>(riscP2Ptr, newRisc);
+                // Disabled as this makes your combos scale due to lack of "negative RISC"?
+                // wallP1 = strive.ReadMemory<int>(wallP1Ptr);
+                // newRisc = Math.Min((int)Math.Round(wallP1 * ((double)12800 / 3000)), 12800);
+                // strive.WriteMemory<int>(riscP2Ptr, newRisc);
 
                 wallP2 = strive.ReadMemory<int>(wallP2Ptr);
                 newRisc = Math.Min((int)Math.Round(wallP2 * ((double)12800 / 3000)), 12800);
