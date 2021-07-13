@@ -1,6 +1,8 @@
 # StriveUtils
 
-This is a tool that (for now) replaces the P2 RISC gauge with P2 Wall damage.
+This is a tool that replaces the RISC gauge with Wall damage.
+
+Wall damage on P2 shows on P1's RISC gauge and vice versa to keep combos stable damage-wise.
 
 It's still a very barebones prototype, but it should work. Effects in online play are unknown, but will probably lead to desyncs and/or crashes, as it directly writes into memory.
 
