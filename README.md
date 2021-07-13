@@ -2,7 +2,9 @@
 
 This is a tool that (for now) replaces the P2 RISC gauge with P2 Wall damage.
 
-It's still a very barebones prototype, but it should work.
+It's still a very barebones prototype, but it should work. Effects in online play are unknown, but will probably lead to desyncs and/or crashes.
+
+Use at your own risk.
 
 ## How to use
 
